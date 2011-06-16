@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nLight Reader</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <script src="http://yui.yahooapis.com/3.1.1/build/yui/yui.js"></script>
+  <script>
+    var config = {
+      filter: "raw",
+      modules: {
+	"grapi": {
+	  name: "grapi",
+	  fullpath: "js/grapi.js",
+	  type: "js",
+	  requires: ["io", "json-parse", "attribute"]
+	},
+	"nlight-feed-widget": {
+	  name: "nlight-feed-widget",
+	  fullpath: "js/feed.widget.js",
+	  type: "js",
+	  requires:  ["grapi", "anim", "grids", "widget", "widget", "widget-position", "widget-position-align", "widget-stdmod", "gallery-torelativetime", "event-key"]
+	},
+	"nlight-subscription-widget": {
+	  name: "nlight-feed-widget",
+	  fullpath: "js/subscription.widget.js",
+	  type: "js",
+	  requires:  ["grapi", "nlight-feed-widget", "attribute"]
+	}
+      }
+    }
+    YUI(config).use("nlight-subscription-widget", function(Y){
+      if(window.location.hash) stream = Y.grapi.stream(window.location.hash.slice(1))
+      else stream = Y.grapi.stream("feed/http://feeds.feedburner.com/codinghorror/")
+
+      var hashtag = window.location.hash.slice(1)
+      Y.publish("hashchange")
+      setInterval(function() {
+	if( window.location.hash.slice(1) !== hashtag ) Y.fire("hashchange")
+	hashtag = window.location.hash.slice(1)
+      }, 200)
+
+      subscriptions = Y.grapi.subscriptions()
+      subscriptions.load()
+      window.Y = Y
+      Y.on("domready", function() {
+	window.switcher = Y.nlight.streamSwitcher({rendertarget: "#target"})
+	switcher.render()
+	window.current = switcher.switchTo(stream.get("id"), "#target") 
+      })
+      window.info = function() {
+	for(var s in Y.grapi.cache.streams) {
+	  var sub = Y.grapi.cache.streams[s]
+	  console.log(sub.get("id"), sub.get("title"), sub.get("unread"))
+	}
+      }
+    })
+  </script>
+</head>
+<body>
+  <div id="target" ></div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+=== nLight Reader ===
+
+A Google Reader frontend written with JavaScript using YUI3
+The backend supports only Google App Engine at the moment but the app is meant to be portable across many backends
+
+Author: Liudmil Mitev, liudmil.mitev@gmail.com

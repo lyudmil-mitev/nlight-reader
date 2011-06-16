@@ -1,0 +1,238 @@
+body, html {
+  font-family: Verdana;
+  font-size: 10pt;
+  margin: 0;
+  padding: 0;
+}
+
+a img {
+  border: 0
+}
+
+
+.nlight-arrow-left {
+  outline: none;
+  position: fixed;
+  width: 50px;
+  height: 70px;
+  top: 45%;
+  left: 3%;
+  background: url("../img/big-arrows.png") -130px 0;
+}
+
+.nlight-arrow-left:hover {
+  background: url("../img/big-arrows.png") -9px 0;
+}
+
+.nlight-arrow-right {
+  outline: none;
+  position: fixed;
+  width: 50px;
+  height: 70px;
+  top: 45%;
+  left: 93%;
+  background: url("../img/big-arrows.png") -192px 0;
+}
+
+.nlight-arrow-right:hover {
+ background: url("../img/big-arrows.png") -73px 0;  
+}
+
+.yui3-feedwidget {
+  margin: 1em auto;
+  position: relative;
+  padding: 1em 0;
+  min-width: 720px;
+  width: 60%;
+  /*
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-box-shadow: 0px 0px 3px #333;
+  -webkit-box-shadow: 0px 0px 3px #333;
+  box-shadow: 0 0 3px #333;
+ */
+}
+
+.yui3-feedwidget-hidden {
+  display: none;
+}
+
+.yui3-feedwidget .yui3-widget-hd h1 {
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  color: #000;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center;
+  font-size: 3em;
+}
+
+.yui3-feedwidget .yui3-widget-ft a.loadmore {
+  font-family: Verdana, sans;
+  font-weight: bold;
+  display: block;
+  outline: 0;
+  text-align: center;
+  margin: -1px 3em 0 3em;
+  padding: 1em 0 1em 0;
+  color: #555;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+.yui3-feedwidget .yui3-widget-ft a.loadmore:hover {
+  color: #000;
+}
+
+.yui3-feedwidget .yui3-widget-hd h2.unread {
+  min-width: 4em;
+  width: 20%;
+  margin: 0 auto 2em auto;
+  border-top: 2px solid #CCC;
+}
+
+.yui3-feedwidget .item {
+  border-bottom: 1px solid #DDD;
+  margin: 0 3em;
+}
+
+.yui3-feedwidget .item.selected {
+  margin: 0;
+  aborder: 1px solid #4B9DFA;
+  -moz-box-shadow: 2px 2px 5px #BBB;
+  -webkit-box-shadow: 2px 2px 5px #BBB;
+  box-shadow: 2px 2px 5px #BBB;
+  font-size: 1.15em;
+  padding: 0 1em;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.yui3-feedwidget .item.selected.expanded {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.yui3-feedwidget .item.expanded {
+  margin: 0;
+}
+
+.yui3-feedwidget .item .star {
+  height: 18px;
+  width: 20px;
+  display: inline-block;
+  white-space: nowrap;
+  background: url(../img/star.png) 0 -18px no-repeat;
+}
+
+.yui3-feedwidget .item.expanded .star {
+  display: block;
+  margin-top: -17px;
+}
+
+.yui3-feedwidget .item .star:hover, .yui3-feedwidget .item.starred .star{
+  background: url(../img/star.png) top no-repeat;
+}
+
+.yui3-feedwidget-content.rendering {
+  background: url(../img/loading.gif) center center no-repeat;
+  margin: 10em auto;
+  width: 10em;
+  height: 10em;
+}
+
+.yui3-feedwidget-content.rendering * {
+  display: none;
+}
+
+.yui3-feedwidget .item .date {
+  font-size: 1.1em;
+  position: relative;
+  color: #888;
+  font-family: Verdana, sans;
+  font-weight: normal;
+  text-align: right;
+  margin: 0; padding: 0;
+  height: 1.4em;
+  z-index: -1;
+  width: 40%;
+  overflow: hidden;
+  float: right;
+  margin-top: -1.4em;
+}
+
+.yui3-feedwidget .item a.panel {
+  outline: 0;
+  display: none;
+  height: 20px;
+  border-top: 1px dashed #AAA;
+  background: url('../img/arrow.gif') #FFF no-repeat center center;
+}
+
+.yui3-feedwidget .item a.panel:hover {
+  background-color: #EEE;
+}
+
+.yui3-feedwidget .item.expanded a.panel {
+  display: block;
+  margin-top: -1px;
+}
+
+.yui3-feedwidget .item.expanded .date {
+  position: relative;
+  text-align: center;
+  margin: 0 auto 3em auto;
+  width: 100%;
+  float: none;
+}
+
+.yui3-feedwidget .item .content {
+  display: none
+}
+
+.yui3-feedwidget .expanded .content {
+  display: block;
+  overflow: auto;
+}
+
+.yui3-feedwidget .item a.title {
+  outline: 0;
+  display: inline-block;
+  margin-top: .5em;
+  padding: 0 0 0 1em;
+  z-index: 10;
+  width: 80%;
+  text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: Georgia, sans-serif;
+  font-weight: normal;
+  font-size: 1.7em;
+  color: #000;
+  margin-bottom: 0em;
+  text-decoration: none;
+}
+
+.yui3-feedwidget .item.read a.title {
+  color: #555
+}
+
+.yui3-feedwidget .item.expanded a.title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #000;
+  display: block;
+  white-space: normal;
+  overflow: visible;
+  width: 100%;
+  width: 80%;
+  margin: 1em auto .5em auto;
+}
+
+.yui3-feedwidget .item a.title:hover {
+  color: #000;
+}
