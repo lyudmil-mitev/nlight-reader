@@ -70,7 +70,8 @@ YUI.add("nlight-feed-widget", function(Y) {
 	  if(current.next()) {
 	    this.selectNext()
 	    if(current.get('offsetTop') > window.scrollY) {
-	      this.animScrollTo(current.get('offsetTop') - current.get('offsetHeight'))
+	      // this.animScrollTo(current.get('offsetTop') - current.get('offsetHeight'))
+	      window.scrollTo(0, current.get('offsetTop') - current.get('offsetHeight'))
 	    } else {
 	      window.scrollTo(0, current.get('offsetTop') - current.get('offsetHeight'))
 	    }
@@ -81,7 +82,8 @@ YUI.add("nlight-feed-widget", function(Y) {
 	  var current = this.bodyNode.one(".selected")
 	  if(current.previous()) {
 	    this.selectPrevious()
-	    this.animScrollTo(current.previous().get('offsetTop') - current.get('offsetHeight'))
+	    // this.animScrollTo(current.previous().get('offsetTop') - current.get('offsetHeight'))
+	    window.scrollTo(0, current.previous().get('offsetTop') - current.previous().get('offsetHeight'))
 	    this.toggleCurrentItem()
 	  }
     },
@@ -106,7 +108,7 @@ YUI.add("nlight-feed-widget", function(Y) {
 	    current.previous().addClass("selected")
 	  }
 	  if(current.get('offsetTop') - current.get('offsetHeight') < window.scrollY) {
-	    window.scrollTo(0, current.get('offsetTop') - current.get('offsetHeight'));
+	    window.scrollTo(0, current.get('offsetTop') - current.get('offsetHeight')*1.5);
 	  }
     },
     selectNext: function(event) {
@@ -219,3 +221,4 @@ YUI.add("nlight-feed-widget", function(Y) {
 }, {
     requires:  ["grapi", "anim", "grids", "widget", "widget", "widget-position", "widget-position-align", "widget-stdmod", "gallery-torelativetime", "event-key"]
 });
+
