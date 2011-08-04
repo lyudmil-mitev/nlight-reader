@@ -142,7 +142,7 @@ YUI.add("nlight-feed-widget", function(Y) {
 	}
       }
       Y.Event.purgeElement(window, false, "scroll")
-      Y.get(window).on("scroll", onScroll)
+      Y.one(window).on("scroll", onScroll)
     },
     syncLoading: function() {
       this.get("contentBox").addClass('loading');
