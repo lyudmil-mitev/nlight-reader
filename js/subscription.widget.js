@@ -10,7 +10,7 @@ YUI.add("nlight-subscription-widget", function(Y) {
    Y.nlight.streamSwitcher = function(arguments) {
       return new Switcher(arguments)
    }
-   Switcher = function(config) {
+   var Switcher = function(config) {
       this.addAttrs(Y.merge(Switcher.ATTRS), config)
       Y.on("hashchange", Y.bind(this.hashChange, this))
    }
@@ -48,7 +48,7 @@ YUI.add("nlight-subscription-widget", function(Y) {
          },
          next: function(event) {
             if( event ) event.preventDefault()
-               var subscrs = Y.grapi.subscriptions().get("subscriptionlist")
+            var subscrs = Y.grapi.subscriptions().get("subscriptionlist")
             var currentindex = Y.Array(subscrs).indexOf(this.get("currentstream"))
             if (currentindex >= subscrs.length - 1) return false
             this.switchTo(subscrs[currentindex+1])
@@ -57,10 +57,10 @@ YUI.add("nlight-subscription-widget", function(Y) {
             window.location.hash = streamid
             var current = this.get("current")
             if( current ) current.destroy();
-            // 	if(current) {
-            // 	  current.slideOut()
-            // 	  current._slide_anim.on("end", function() { current.destroy() })
-            // 	}
+            /*if(current) {
+              current.slideOut()
+              current._slide_anim.on("end", function() { current.destroy() })
+            }*/
             this.set("current", streamid)
             return this.get("current")
          },

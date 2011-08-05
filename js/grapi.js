@@ -25,9 +25,14 @@ YUI.add('grapi', function(Y) {
       }
    }
 
+
+   /*
+    * Item, stream and subscription instances are cached here
+    * Don't use directly
+    */
    Y.grapi.cache = {
-      items: {  },
-      streams: { }
+      items: {},
+      streams: {}
    }
 
    Y.grapi.io = {

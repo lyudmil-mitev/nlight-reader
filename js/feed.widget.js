@@ -47,6 +47,7 @@ YUI.add("nlight-feed-widget", function(Y) {
       },
       _toggle: function(node) {
          if(!node.hasClass("expanded")) {
+            // Expand
             var content = Y.grapi.item(node.getData("itemid")).get("contents");
             if(node.one("div.content")._node.innerHTML == "") {
                node.one("div.content")._node.innerHTML = content;
@@ -54,6 +55,7 @@ YUI.add("nlight-feed-widget", function(Y) {
             if(this.itemsNode.one('.expanded')) this.itemsNode.one('.expanded').removeClass("expanded");
             node.addClass("expanded")
          } else {
+            // Collapse
             node.removeClass("expanded")
          }
       },
@@ -157,6 +159,7 @@ YUI.add("nlight-feed-widget", function(Y) {
       syncFeed: function(event) {
          var stream = this.get("stream");
          this.headerNode.one(".title").set("innerHTML", stream.get("title"));
+         window.document.title = stream.get("title") + " - nLight Reader"
          this.footerNode.one('.loadmore').set('innerHTML', 'load more items');
          this.get("contentBox").removeClass('loading')
          this.get("contentBox").removeClass("rendering")

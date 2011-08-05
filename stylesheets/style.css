@@ -161,6 +161,7 @@ a img {
   overflow: hidden;
   float: right;
   margin-top: -1.4em;
+  margin-left: 2em;
 }
 
 .yui3-feedwidget .item a.panel {
@@ -206,7 +207,9 @@ a img {
   width: 80%;
   text-overflow: ellipsis;
   -moz-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+  -moz-binding: url('/stylesheets/ellipsis.xml#ellipsis');
   white-space: nowrap;
   overflow: hidden;
   font-family: Georgia, sans-serif;
