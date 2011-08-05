@@ -51,7 +51,7 @@ a img {
   -moz-box-shadow: 0px 0px 3px #333;
   -webkit-box-shadow: 0px 0px 3px #333;
   box-shadow: 0 0 3px #333;
- */
+  */
 }
 
 .yui3-feedwidget-hidden {
@@ -196,6 +196,22 @@ a img {
 .yui3-feedwidget .expanded .content {
   display: block;
   overflow: auto;
+}
+
+.yui3-feedwidget .item .footer {
+  display: none;
+}
+
+.yui3-feedwidget .expanded .footer {
+  display: block;
+}
+
+.yui3-feedwidget .item .footer li {
+  display: inline-block;
+  list-style: none;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  padding-right: 1em;
 }
 
 .yui3-feedwidget .item a.title {

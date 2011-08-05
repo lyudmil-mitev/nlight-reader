@@ -221,7 +221,16 @@ YUI.add("nlight-feed-widget", function(Y) {
       if(item.get("starred")) node.addClass("starred");
       return node;
    }
-   itemNode.TEMPLATE = "<div class='item'><a class='panel' href=''></a><a class='star' href=''></a><a class='title'></a><h2 class='date'></h2><div class='content'></div></div>";
+   itemNode.TEMPLATE = "<div class='item'><a class='panel' href=''></a><a class='star' href=''></a><a class='title'></a><h2 class='date'></h2>" + 
+                       "<div class='content'></div>" +
+                       "<div class='footer'>" +
+                       "<ul>" +
+                       "<li class='add-star'>Add star</li>" +
+                       "<li class='like'>Like</li>" +
+                       "<li class='share'>Share</li>" +
+                       "<li class='keep-unread'>Keep unread</li>" +
+                       "<li class='add-tags'>Add tags</li>" +
+                       "</ul></div></div>"
    itemNode.NODE = Y.Node.create(itemNode.TEMPLATE)
 
 
@@ -230,4 +239,3 @@ YUI.add("nlight-feed-widget", function(Y) {
 }, {
    requires:  ["grapi", "anim", "grids", "widget", "widget", "widget-position", "widget-position-align", "widget-stdmod", "gallery-torelativetime", "event-key"]
 });
-
